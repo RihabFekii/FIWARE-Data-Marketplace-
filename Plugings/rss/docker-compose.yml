@@ -1,0 +1,28 @@
+version: '3'
+services:
+  rss:
+      image: fiware/biz-ecosystem-rss:v7.8.0
+      #restart: always
+      ports:
+        - 9999:8081
+        - 4444:4848
+        - 1111:8181
+      
+      networks:
+        main:
+          aliases:
+            - rss.docker
+      # volumes:
+      #    - ./rss-conf:/etc/default/rss  # Used if not configured by environment
+      environment:
+        - BAE_RSS_DATABASE_URL=jdbc:mysql://mysql:3306/RSS
+        - BAE_RSS_DATABASE_USERNAME=root
+        - BAE_RSS_DATABASE_PASSWORD=my-secret-pw
+        - BAE_RSS_DATABASE_DRIVERCLASSNAME=com.mysql.jdbc.Driver
+        - BAE_RSS_OAUTH_CONFIG_GRANTEDROLE=admin
+        - BAE_RSS_OAUTH_CONFIG_SELLERROLE=seller
+        - BAE_RSS_OAUTH_CONFIG_AGGREGATORROLE=Aggregator
+
+networks:
+  main:
+    external: true

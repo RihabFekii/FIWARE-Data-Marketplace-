@@ -1,0 +1,22 @@
+version: '3'
+services:
+  apis:
+      image: fiware/biz-ecosystem-apis:v7.6.0
+      #restart: always
+      ports:
+        - 4848:4848
+        - 8080:8080
+      networks:
+        main:
+          aliases:
+            - apis.docker
+      # volumes:
+      #    - ./apis-conf:/etc/default/tmf/  # Used if not configured by environment
+      environment:
+        - BAE_SERVICE_HOST=http://proxy.docker:8004/
+        - MYSQL_ROOT_PASSWORD=my-secret-pw
+        - MYSQL_HOST=mysql
+
+networks:
+  main:
+    external: true
