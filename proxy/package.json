@@ -1,0 +1,91 @@
+{
+  "name": "business-ecosystem-logic-proxy",
+  "version": "7.4.0",
+  "description": "Logic Layer for the Business API Ecosystem",
+  "author": "UPM",
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "async-lock": "^0.3.8",
+    "babel-polyfill": "^6.16.0",
+    "aureooms-js-itertools": "^1.3.0",
+    "base64url": "1.0.x",
+    "blueimp-md5": "^2.3.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "1.4.0",
+    "deep-equal": "^1.0.1",
+    "deepcopy": "^0.6.3",
+    "elasticsearch": "^15.2.0",
+    "errorhandler": "1.4.x",
+    "express": "^4.x",
+    "express-session": "1.12.1",
+    "i18n-2": "^0.7.2",
+    "jade": "^1.11.0",
+    "left-pad": "^1.1.1",
+    "leveldown": "^1.9.0",
+    "levelup": "^1.3.3",
+    "log4js": "0.6.x",
+    "merge-dirs": "^0.2.1",
+    "moment": "^2.13.0",
+    "mongoose": "^4.3.6",
+    "node-minify": "^2.4.1",
+    "normalize-url": "^1.8.0",
+    "on-finished": "^2.3.0",
+    "passport": "0.3.0",
+    "passport-fiware-oauth": "^0.2.0",
+    "promiz": "^1.0.5",
+    "request": "^2.88.0",
+    "search-index": "0.15.0",
+    "trycatch": "^1.5.21",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "freeport": "1.0.5",
+    "istanbul": "^1.1.0-alpha.1",
+    "jasmine": "2.9.0",
+    "nock": "^8.2.2",
+    "proxyquire": "1.7.3"
+  },
+  "scripts": {
+    "lint": "eslint ./lib --ext .js",
+    "prettier": "prettier --config .prettierrc.json --write '**/**/**/*.js' '**/**/*.js' '**/*.js' '*.js'",
+    "test": "JASMINE_CONFIG_PATH=test/config/jasmine.json node_modules/.bin/istanbul cover --include-all-sources -x public/**/*.js -x locales/**/*.js -x server.js -x Gruntfile.js -x fill_indexes.js node_modules/.bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FIWARE-TMForum/business-ecosystem-logic-proxy"
+  },
+  "contributors": [
+    {
+      "name": "Francisco de la Vega",
+      "email": "fdelavega@conwet.com"
+    },
+    {
+      "name": "Aitor Magán",
+      "email": "amagan@conwet.com"
+    },
+    {
+      "name": "Jaime Pajuelo",
+      "email": "jpajuelo@conwet.com"
+    },
+    {
+      "name": "Miguel Garcia",
+      "email": "mgarcia@conwet.com"
+    }
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --config .prettierrc.json --write",
+      "git add"
+    ]
+  }
+}
