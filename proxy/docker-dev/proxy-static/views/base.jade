@@ -1,7 +1,7 @@
 doctype html
 html(ng-app="app")
   head
-    title i4Trust Marketplace
+    title AI Marketplace
 
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -131,8 +131,8 @@ html(ng-app="app")
                 span.item-icon.fa.fa-share-alt
                 span.item-text #{ __("Revenue sharing") }
           a.navbar-brand.hidden-xs(href="#{ contextPath }")
-            img(src="#{ contextPath }/resources/core/images/i4Trust_Logo.png")
-        .navbar-text {{ title }}
+            img(src="#{ contextPath }/resources/core/images/AI_Marketplace_Logo_RGB.svg")
+        .navbar-text AI Marketplace
 
         if user
           ul.nav.navbar-nav.navbar-right
@@ -191,13 +191,24 @@ html(ng-app="app")
 
     block content
 
+    .bottom-div
+      .col-sm-1(id="language", ng-controller="LangCtrl as langVM")
+        select(ng-model="langVM.locale" ng-change="langVM.onLocaleChange()")
+          option(value="en") English
+          option(value="es") Español
 
     hr.fiware-line
-    footer.footer-main.text-center  
+    footer.footer-main.d-flex.justify-content-between
+      include ./contributors.jade
       .copyright
-        © i4Trust 2021. Powered by 
-        a(href="https://github.com/FIWARE-TMForum/Business-API-Ecosystem", target="_blank") <u> FIWARE BAE/Marketplace components </u>
-      
+        © 2015-2019 CoNWeT Lab., Universidad Politécnica de Madrid
+      .footer-logo
+        ul.list-inline.pull-right
+          li.small
+            a(href="https://www.fiware.org") FIWARE
+          li.small ·
+          li.small
+            a(href="https://www.tmforum.org") TM FORUM
 
     if user
       include ./modals/user-profile.modal.jade

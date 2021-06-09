@@ -18,7 +18,7 @@ services:
 
       environment:
             # ------ OAUTH2 Config ------
-            - BAE_LP_OAUTH2_SERVER=https://marketplace-accounts.fiware.io  # URL of the FIWARE IDM used for user authentication
+            - BAE_LP_OAUTH2_SERVER=https://marketplace-accounts.fiware.io # URL of the FIWARE IDM used for user authentication
             - BAE_LP_OAUTH2_CLIENT_ID=07e5f09b-4a65-41c4-a987-5ef850b5ea32    # OAuth2 Client ID of the BAE applicaiton
             - BAE_LP_OAUTH2_CLIENT_SECRET=fc1bee5d-13e6-4dd6-9a8f-e4a3f36fcdef  # OAuth Client Secret of the BAE application
             - BAE_LP_OAUTH2_CALLBACK=http://localhost:8004/auth/fiware/callback  # Callback URL for receiving the access tokens
@@ -27,7 +27,7 @@ services:
             - BAE_LP_OAUTH2_CUSTOMER_ROLE=customer  # Role defined in the IDM client app for customers of the BAE 
             - BAE_LP_OAUTH2_ORG_ADMIN_ROLE=orgAdmin  # Role defined in the IDM client app for organization admins of the BAE 
             - BAE_LP_OAUTH2_IS_LEGACY=false  # Whether the used FIWARE IDM is version 6 or lower
-            - BAE_LP_THEME=i4trust #change the name of the theme folder you created 
+            - BAE_LP_THEME=KI-Marketplace #change the name of the theme folder you created 
             - COLLECT=True
 
 networks:

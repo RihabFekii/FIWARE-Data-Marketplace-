@@ -340,5 +340,10 @@
 	"Upgrade Product Spec": "Upgrade Product Spec",
 	"New Version": "New Version",
 	"This field is required": "This field is required",
-	"Datasets": "Datasets"
+	"Datasets": "Datasets",
+	"The offering is free": "The offering is free",
+	"The offering is open": "The offering is open",
+	"The offering can be open or free": "The offering can be open or free",
+	"Is an open offering?": "Is an open offering?",
+	"This field must not exceed 100 chars.": "This field must not exceed 100 chars."
 }

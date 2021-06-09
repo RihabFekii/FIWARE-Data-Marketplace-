@@ -21,7 +21,7 @@ const cssFilesToInject = [
     'bootstrap-3.3.5/css/bootstrap',
     'font-awesome-4.5.0/css/font-awesome',
     'intl-tel-input-8.4.7/css/intlTelInput',
-    'core/css/new-theme'
+    'core/css/KI_MP_theme'
 ].map(function(path) {
     return 'resources/' + path + '.css';
 });
