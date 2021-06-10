@@ -1,9 +1,7 @@
 version: '3'
 services:
-
   proxy:
-      image: fiware/biz-ecosystem-logic-proxy
-
+      image: fiware/biz-ecosystem-logic-proxy:v7.8.1rc1
       ports:
         - 8004:8004
       networks:
@@ -18,18 +16,21 @@ services:
 
       environment:
             # ------ OAUTH2 Config ------
-            - BAE_LP_OAUTH2_SERVER=https://marketplace-accounts.fiware.io # URL of the FIWARE IDM used for user authentication
-            - BAE_LP_OAUTH2_CLIENT_ID=07e5f09b-4a65-41c4-a987-5ef850b5ea32    # OAuth2 Client ID of the BAE applicaiton
-            - BAE_LP_OAUTH2_CLIENT_SECRET=fc1bee5d-13e6-4dd6-9a8f-e4a3f36fcdef  # OAuth Client Secret of the BAE application
+            - BAE_LP_OAUTH2_SERVER=https://idp.ai-marketplace.fiware.io  # URL of the FIWARE IDM used for user authentication
+            - BAE_LP_OAUTH2_CLIENT_ID=6228a06a-2f07-4a6a-a6d0-4ee09f4cde6c  # OAuth2 Client ID of the BAE applicaiton
+            - BAE_LP_OAUTH2_CLIENT_SECRET=06d17844-96f4-42a0-baf6-cafa103c77a0  # OAuth Client Secret of the BAE application
             - BAE_LP_OAUTH2_CALLBACK=http://localhost:8004/auth/fiware/callback  # Callback URL for receiving the access tokens
             - BAE_LP_OAUTH2_ADMIN_ROLE=admin  # Role defined in the IDM client app for admins of the BAE 
             - BAE_LP_OAUTH2_SELLER_ROLE=seller  # Role defined in the IDM client app for sellers of the BAE 
             - BAE_LP_OAUTH2_CUSTOMER_ROLE=customer  # Role defined in the IDM client app for customers of the BAE 
             - BAE_LP_OAUTH2_ORG_ADMIN_ROLE=orgAdmin  # Role defined in the IDM client app for organization admins of the BAE 
             - BAE_LP_OAUTH2_IS_LEGACY=false  # Whether the used FIWARE IDM is version 6 or lower
-            - BAE_LP_THEME=KI-Marketplace #change the name of the theme folder you created 
+            - BAE_LP_THEME=KI-Marketplace
             - COLLECT=True
-
 networks:
   main:
-    external: true  
+    external: true
+
+
+
+   
